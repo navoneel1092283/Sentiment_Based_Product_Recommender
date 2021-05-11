@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sentiment Based Product Recommmendation System</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!--<link href="{{ url_for('static', filename='assets/img/favicon.png')}}" rel="icon">-->
+  <!--<link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+  <main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Sentiment Based Product Recommendation System</h2>
+          <p><b>Enter your registered username and we will will recommend the most suitable products for you</b></p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-12">
+            <form action="{{ url_for('predict', _anchor='app')}}" method="post" role="form">
+              <div class="form-row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Username" data-rule="minlen:1" required />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="text-center"><button type="submit" class="btn btn-success btn-lg btn-block"><span>Get Recommendations</span></button></div>
+            </form>
+            <font color = 'red'><b>{{ message }}</b></font>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h3>Recommended Products {{ username }}</h3>
+          <!--<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>-->
+        </div>
+      </div>
+
+      <div class="container-fluid">
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="owl-carousel testimonials-carousel">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <h1> {{ product1n }} </h1>
+                  <p style="font-size:15px"><b>Brand: </b><i>{{ product1b }}</i></p>
+                  <p style="font-size:15px"><b>Manufacturer: </b><i>{{ product1m }}</i></p>
+                  <p style="font-size:15px"><b>Cateogies: </b>{{ product1c }}</p>
+                </div>
+              </div>
+
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <h2> {{ product2n }} </h2>
+                  <p style="font-size:15px"><b>Brand: </b><i>{{ product2b }}</i></p>
+                  <p style="font-size:15px"><b>Manufacturer: </b><i>{{ product2m }}</i></p>
+                  <p style="font-size:15px"><b>Cateogies: </b>{{ product2c }}</p>
+                </div>
+              </div>
+
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <h3> {{ product3n }} </h3>
+                  <p style="font-size:15px"><b>Brand: </b><i>{{ product3b }}</i></p>
+                  <p style="font-size:15px"><b>Manufacturer: </b><i>{{ product3m }}</i></p>
+                  <p style="font-size:15px"><b>Cateogies: </b>{{ product3c }}</p>
+                </div>
+              </div>
+
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <h4><b> {{ product4n }} </b></h4>
+                  <p style="font-size:15px"><b>Brand: </b><i>{{ product4b }}</i></p>
+                  <p style="font-size:15px"><b>Manufacturer: </b><i>{{ product4m }}</i></p>
+                  <p style="font-size:15px"><b>Cateogies: </b>{{ product4c }}</p>
+                </div>
+              </div>
+
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <h4> {{ product5n }} </h4>
+                  <p style="font-size:15px"><b>Brand: </b><i>{{ product5b }}</i></p>
+                  <p style="font-size:15px"><b>Manufacturer: </b><i>{{ product5m }}</i></p>
+                  <p style="font-size:15px"><b>Cateogies: </b>{{ product5c }}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <!--
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
